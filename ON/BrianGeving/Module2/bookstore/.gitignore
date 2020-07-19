@@ -1,0 +1,5 @@
+# exclude node_module push
+node_module/
+
+# exclude package-lock.json
+package-lock.json
