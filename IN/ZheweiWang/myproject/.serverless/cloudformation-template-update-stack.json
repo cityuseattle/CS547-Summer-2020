@@ -172,7 +172,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-nodejs/dev/1597650198360-2020-08-17T07:43:18.360Z/aws-nodejs.zip"
+          "S3Key": "serverless/aws-nodejs/dev/1598218169965-2020-08-23T21:29:29.965Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-get-index",
         "Handler": "functions/get-index.handler",
@@ -196,14 +196,14 @@
         "GetDashindexLogGroup"
       ]
     },
-    "GetDashindexLambdaVersionVzU3uYXInp4a5NcH5WoKZ4QdbqO2Ft1HYwThElkDOVs": {
+    "GetDashindexLambdaVersionrh23E8AgN2tCZX57HRCqwlOyf4jJIDDHbnBiQAJc4XE": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "GetDashindexLambdaFunction"
         },
-        "CodeSha256": "u7BQyM41zLSvUT1M2xx8sM7MVJrplEO72fi3GOS9Gzs="
+        "CodeSha256": "JRTfAamFkYZf6bx5PbDyqrUbMM8FkcgJy95NDJMjQS8="
       }
     },
     "FetchDashbooksLambdaFunction": {
@@ -213,7 +213,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-nodejs/dev/1597650198360-2020-08-17T07:43:18.360Z/aws-nodejs.zip"
+          "S3Key": "serverless/aws-nodejs/dev/1598218169965-2020-08-23T21:29:29.965Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-fetch-books",
         "Handler": "functions/fetch-books.handler",
@@ -236,14 +236,14 @@
         "FetchDashbooksLogGroup"
       ]
     },
-    "FetchDashbooksLambdaVersionpwwDhv4b37zk0cBCS8e7ZzNtVbCQv5P36DbDxhGR5U": {
+    "FetchDashbooksLambdaVersionoemxSZQzbSgP5Z5kTN4GS0MzQt45riHCLoQnng8Gg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "FetchDashbooksLambdaFunction"
         },
-        "CodeSha256": "u7BQyM41zLSvUT1M2xx8sM7MVJrplEO72fi3GOS9Gzs="
+        "CodeSha256": "JRTfAamFkYZf6bx5PbDyqrUbMM8FkcgJy95NDJMjQS8="
       }
     },
     "SearchDashbooksLambdaFunction": {
@@ -253,7 +253,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/aws-nodejs/dev/1597650198360-2020-08-17T07:43:18.360Z/aws-nodejs.zip"
+          "S3Key": "serverless/aws-nodejs/dev/1598218169965-2020-08-23T21:29:29.965Z/aws-nodejs.zip"
         },
         "FunctionName": "aws-nodejs-dev-search-books",
         "Handler": "functions/search-books.handler",
@@ -276,14 +276,14 @@
         "SearchDashbooksLogGroup"
       ]
     },
-    "SearchDashbooksLambdaVersionaKNaoeDIBV352GytZ47NP3z70MqaPWa3QHbBtD9c": {
+    "SearchDashbooksLambdaVersionA2bW5ZAJB490EJsXyyVAu6zhlAGx1w1ez8rM0LuhUj8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SearchDashbooksLambdaFunction"
         },
-        "CodeSha256": "u7BQyM41zLSvUT1M2xx8sM7MVJrplEO72fi3GOS9Gzs="
+        "CodeSha256": "JRTfAamFkYZf6bx5PbDyqrUbMM8FkcgJy95NDJMjQS8="
       }
     },
     "ApiGatewayRestApi": {
@@ -457,7 +457,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1597650173988": {
+    "ApiGatewayDeployment1598218144063": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -614,19 +614,19 @@
     "GetDashindexLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "GetDashindexLambdaVersionVzU3uYXInp4a5NcH5WoKZ4QdbqO2Ft1HYwThElkDOVs"
+        "Ref": "GetDashindexLambdaVersionrh23E8AgN2tCZX57HRCqwlOyf4jJIDDHbnBiQAJc4XE"
       }
     },
     "FetchDashbooksLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "FetchDashbooksLambdaVersionpwwDhv4b37zk0cBCS8e7ZzNtVbCQv5P36DbDxhGR5U"
+        "Ref": "FetchDashbooksLambdaVersionoemxSZQzbSgP5Z5kTN4GS0MzQt45riHCLoQnng8Gg"
       }
     },
     "SearchDashbooksLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SearchDashbooksLambdaVersionaKNaoeDIBV352GytZ47NP3z70MqaPWa3QHbBtD9c"
+        "Ref": "SearchDashbooksLambdaVersionA2bW5ZAJB490EJsXyyVAu6zhlAGx1w1ez8rM0LuhUj8"
       }
     },
     "ServiceEndpoint": {
