@@ -1,0 +1,11 @@
+{
+  "name": "serverless-todo-rest",
+  "version": "1.0.0",
+  "description": "Serverless CRUD service REST API",
+  "author": "Apiwat C.",
+  "license": "MIT",
+  "dependencies": {
+    "serverless": "^1.79.0",
+    "uuid": "^2.0.3"
+  }
+}
