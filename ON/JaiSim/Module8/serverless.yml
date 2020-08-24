@@ -1,0 +1,16 @@
+functions:
+create:
+handler: functions/create/create
+events:
+http:
+path:todos
+method: post
+cors: true
+
+read: 
+handler: functions/read.read
+events:
+http:
+path: todos
+method: get
+cors:true
