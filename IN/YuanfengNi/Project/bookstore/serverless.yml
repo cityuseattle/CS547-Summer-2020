@@ -29,7 +29,7 @@ functions:
           path: /books/
           method: get
           authorizer: aws_iam
-    environment:
+    environment: 
       books_table: books
   
   search-books:

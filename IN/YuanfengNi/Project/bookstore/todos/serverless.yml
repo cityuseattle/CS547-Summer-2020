@@ -26,6 +26,14 @@ functions:
           method: post
           cors: true
 
+read:
+  handler: functions/read.read
+  event:
+    -http:
+        path: todos
+        method: get
+        cors: true
+
 resources:
   Resources:
     TodosDynamoDbTable:
