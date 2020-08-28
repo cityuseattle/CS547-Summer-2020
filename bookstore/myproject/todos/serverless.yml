@@ -40,6 +40,14 @@ functions:
           method: put 
           cors: true
 
+  delete:
+    handler: functions/delete.delete
+    events:
+      - http:
+          path: todos/{id}
+          method: delete
+          cors : true
+
 
 resources:
   Resources:
