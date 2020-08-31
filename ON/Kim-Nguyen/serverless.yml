@@ -48,3 +48,11 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+
+read:
+  handler: funcitons/read.read
+  events:
+    - http:
+        path: todos
+        method: get
+        cors: true
