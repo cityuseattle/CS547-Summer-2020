@@ -194,7 +194,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aws-nodejs/dev/1598219579572-2020-08-23T21:52:59.572Z/aws-nodejs.zip"
+                "S3Key": "serverless/aws-nodejs/dev/1598861331807-2020-08-31T08:08:51.807Z/aws-nodejs.zip"
               },
               "FunctionName": "aws-nodejs-dev-get-index",
               "Handler": "functions/get-index.handler",
@@ -218,14 +218,14 @@
               "GetDashindexLogGroup"
             ]
           },
-          "GetDashindexLambdaVersionNffCzUVALK7hDm2s5cGITrGLyTDwXyA2CwCRqBXoSY": {
+          "GetDashindexLambdaVersionIOgUAF8j2LQsvVEyonJVIdWWcVnn1e8qdGkBVJbMd3o": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetDashindexLambdaFunction"
               },
-              "CodeSha256": "j1TGs7W3rZsEjdL7uU3sB+nvMaeU3bRgTzFDUPDRDSQ="
+              "CodeSha256": "F31sMmQMKV8FW7oBnzYhcelT8tGXGh/3P68WQe1V6r8="
             }
           },
           "FetchDashbooksLambdaFunction": {
@@ -235,7 +235,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aws-nodejs/dev/1598219579572-2020-08-23T21:52:59.572Z/aws-nodejs.zip"
+                "S3Key": "serverless/aws-nodejs/dev/1598861331807-2020-08-31T08:08:51.807Z/aws-nodejs.zip"
               },
               "FunctionName": "aws-nodejs-dev-fetch-books",
               "Handler": "functions/fetch-books.handler",
@@ -258,14 +258,14 @@
               "FetchDashbooksLogGroup"
             ]
           },
-          "FetchDashbooksLambdaVersionV3e2wTx9IHU36n7r9VZJbSE4zC1gVrWOJEpNUug41o": {
+          "FetchDashbooksLambdaVersionf5NwFVHmzqW1Hs8hf2nw5aiO0peU2IkPVpZVSKLfGs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "FetchDashbooksLambdaFunction"
               },
-              "CodeSha256": "j1TGs7W3rZsEjdL7uU3sB+nvMaeU3bRgTzFDUPDRDSQ="
+              "CodeSha256": "F31sMmQMKV8FW7oBnzYhcelT8tGXGh/3P68WQe1V6r8="
             }
           },
           "SearchDashbooksLambdaFunction": {
@@ -275,7 +275,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/aws-nodejs/dev/1598219579572-2020-08-23T21:52:59.572Z/aws-nodejs.zip"
+                "S3Key": "serverless/aws-nodejs/dev/1598861331807-2020-08-31T08:08:51.807Z/aws-nodejs.zip"
               },
               "FunctionName": "aws-nodejs-dev-search-books",
               "Handler": "functions/search-books.handler",
@@ -298,14 +298,14 @@
               "SearchDashbooksLogGroup"
             ]
           },
-          "SearchDashbooksLambdaVersionbcS3LOpztsLV26gn7zjBFU8JgoAyQ5JMHg16py2jZw": {
+          "SearchDashbooksLambdaVersion7NsG48vjgiuEdN7re46jaMfSYVZLMeCCCW6JPPhZ6A": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "SearchDashbooksLambdaFunction"
               },
-              "CodeSha256": "j1TGs7W3rZsEjdL7uU3sB+nvMaeU3bRgTzFDUPDRDSQ="
+              "CodeSha256": "F31sMmQMKV8FW7oBnzYhcelT8tGXGh/3P68WQe1V6r8="
             }
           },
           "ApiGatewayRestApi": {
@@ -479,7 +479,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1598219555613": {
+          "ApiGatewayDeployment1598861304230": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -636,19 +636,19 @@
           "GetDashindexLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetDashindexLambdaVersionNffCzUVALK7hDm2s5cGITrGLyTDwXyA2CwCRqBXoSY"
+              "Ref": "GetDashindexLambdaVersionIOgUAF8j2LQsvVEyonJVIdWWcVnn1e8qdGkBVJbMd3o"
             }
           },
           "FetchDashbooksLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "FetchDashbooksLambdaVersionV3e2wTx9IHU36n7r9VZJbSE4zC1gVrWOJEpNUug41o"
+              "Ref": "FetchDashbooksLambdaVersionf5NwFVHmzqW1Hs8hf2nw5aiO0peU2IkPVpZVSKLfGs"
             }
           },
           "SearchDashbooksLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SearchDashbooksLambdaVersionbcS3LOpztsLV26gn7zjBFU8JgoAyQ5JMHg16py2jZw"
+              "Ref": "SearchDashbooksLambdaVersion7NsG48vjgiuEdN7re46jaMfSYVZLMeCCCW6JPPhZ6A"
             }
           },
           "ServiceEndpoint": {
@@ -771,7 +771,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GetDashindexLambdaVersionNffCzUVALK7hDm2s5cGITrGLyTDwXyA2CwCRqBXoSY"
+        "versionLogicalId": "GetDashindexLambdaVersionIOgUAF8j2LQsvVEyonJVIdWWcVnn1e8qdGkBVJbMd3o"
       },
       "fetch-books": {
         "handler": "functions/fetch-books.handler",
@@ -798,7 +798,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "FetchDashbooksLambdaVersionV3e2wTx9IHU36n7r9VZJbSE4zC1gVrWOJEpNUug41o"
+        "versionLogicalId": "FetchDashbooksLambdaVersionf5NwFVHmzqW1Hs8hf2nw5aiO0peU2IkPVpZVSKLfGs"
       },
       "search-books": {
         "handler": "functions/search-books.handler",
@@ -820,7 +820,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "SearchDashbooksLambdaVersionbcS3LOpztsLV26gn7zjBFU8JgoAyQ5JMHg16py2jZw"
+        "versionLogicalId": "SearchDashbooksLambdaVersion7NsG48vjgiuEdN7re46jaMfSYVZLMeCCCW6JPPhZ6A"
       }
     },
     "resources": {
@@ -856,7 +856,7 @@
     "artifact": "D:\\GitHub\\CS547-Summer-2020\\IN\\ZheweiWang\\myproject\\.serverless\\aws-nodejs.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/aws-nodejs/dev/1598219579572-2020-08-23T21:52:59.572Z",
+    "artifactDirectoryName": "serverless/aws-nodejs/dev/1598861331807-2020-08-31T08:08:51.807Z",
     "artifact": "aws-nodejs.zip"
   }
 }
