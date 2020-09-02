@@ -32,6 +32,13 @@ functions:
         path: todos
         method: get 
         cors: true
+  update:
+    handler: functions/update.update
+    events:
+      -http:
+        path: todos/{id}
+        method: Put
+        cors: true
 
 resources:
   Resources:
