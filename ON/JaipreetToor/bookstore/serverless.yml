@@ -25,14 +25,20 @@ functions:
           path: todos
           method: post
           cors: true
-
-read: 
-  handler: functions/read.read
-  events:
-    - http:
-      path: todos
-      method: get
-      cors: true
+  read:
+    handler: functions/read.read
+    events:
+      - http:
+        path: todos
+        method: get 
+        cors: true
+  update:
+    handler: functions/update.update
+    events:
+      -http:
+        path: todos/{id}
+        method: Put
+        cors: true
 
 resources:
   Resources:
