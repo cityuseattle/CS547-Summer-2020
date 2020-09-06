@@ -28,10 +28,10 @@ functions:
   read:
     handler: functions/read.read
     events:
-      -http:
-        path: todos
-        method: get
-        cors: true
+      - http:
+          path: todos
+          method: get
+          cors: true
 
 resources:
   Resources:
