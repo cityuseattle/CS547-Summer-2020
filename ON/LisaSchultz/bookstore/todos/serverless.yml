@@ -42,6 +42,7 @@ update:
           method: put
           cors: true
 
+
 delete:
   handler: functions/delete.delete
   events:
