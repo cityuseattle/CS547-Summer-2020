@@ -29,16 +29,23 @@ functions:
     handler: functions/read.read
     events:
       - http:
-        path: todos
-        method: get 
-        cors: true
+          path: todos
+          method: get
+          cors: true
   update:
     handler: functions/update.update
     events:
-      -http:
-        path: todos/{id}
-        method: Put
-        cors: true
+      - http:
+          path: todos/{id}
+          method: put
+          cors: true
+  delete:
+    handler: functions/delete.delete
+    events:
+      - http:
+          path: todos/{id}
+          method: delete
+          cors: true
 
 resources:
   Resources:
@@ -56,3 +63,4 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.DYNAMODB_TABLE}
+
