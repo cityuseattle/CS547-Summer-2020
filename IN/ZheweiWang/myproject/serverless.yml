@@ -1,63 +1,58 @@
-service: aws-nodejs # NOTE: update this with your service name
-
-plugins:
-  - serverless-pseudo-parameters
+service: todos
 
 provider:
   name: aws
   runtime: nodejs12.x
   region: us-west-2
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
-      Action: dynamodb:scan
-      Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/books
-    - Effect: Allow
-      Action: execute-api:Invoke
-      Resource: arn:aws:execute-api:#{AWS::Region}:#{AWS::AccountId}:*/*/GET/books
-
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
 
 functions:
-  get-index:
-    handler: functions/get-index.handler
+  create:
+    handler: functions/create.create
     events:
       - http:
-          path: /
-          method: get
-    environment:
-      fetch_books_api: https://wfxz4bvxub.execute-api.us-west-2.amazonaws.com/dev/books
-      search_books_api: https://wfxz4bvxub.execute-api.us-west-2.amazonaws.com/dev/books/search
-      
-  fetch-books:
-    handler: functions/fetch-books.handler
-    events:
-      - http:
-          path: /books/
-          method: get
-          authorizer: aws_iam
-    environment:
-      books_table: books
-  
-  search-books:
-    handler: functions/search-books.handler
-    events:
-      - http:
-          path: /books/search
+          path: todos
           method: post
-    environment:
-      books_table: books
+          cors: true
+  update:
+    handler: functions/update.update
+    events:
+      - http:
+          path: todos/{id}
+          method: put
+          cors: true
+  read:
+    handler: functions/read.read
+    events:
+      - http:
+          path: todos
+          method: get
+          cors: true
 
 resources:
   Resources:
-    libraryTable:
-      Type: AWS::DynamoDB::Table
+    TodosDynamoDbTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
       Properties:
-        TableName: books
         AttributeDefinitions:
-          - AttributeName: name
+          - AttributeName: id
             AttributeType: S
         KeySchema:
-          - AttributeName: name
+          - AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
