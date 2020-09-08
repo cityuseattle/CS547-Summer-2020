@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <style>
+      .container {
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .imgDiv {
+        width: 100%;
+      }
+
+      .imgDiv img {
+        width: 100%;
+      }
+
+      .searchDiv {
+        width: 100%;
+        text-align: center;
+        margin: 20px auto;
+      }
+
+      .booksDiv {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .bookDiv {
+        margin: 20px;
+        width: 200px;
+      }
+
+      .bookDiv img {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="imgDiv">
+        <img
+          src="https://res.cloudinary.com/orderstaker/image/upload/v1544419469/others/photo-1499864578991-7642d0f86e5c.jpg"
+          alt="The logo"
+        />
+      </div>
+    </div>
+
+    <div class="searchDiv">
+      <input id="searchInput" name="searchInput" type="text" /><button
+        id="searchBtn"
+        onclick="onSearch()"
+      >
+        Search
+      </button>
+    </div>
+
+    <div class="booksDiv" id="booksDiv">
+      {{#books}}
+      <div class="bookDiv">
+        <div><img alt="book" src="{{image}}" /></div>
+        <div>{{name}}</div>
+      </div>
+      {{/books}}
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha384-Dziy8F2VlJQLMShA6FHWNul/veM9bCkRUaLqr199K94ntO5QUrLJBEbYegdSkkqX"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    const SEARCH_API = "{{& searchAPI}}"; // From the get-index.js
+    const input = $("#searchInput");
+    const booksDiv = $("#booksDiv");
+    input.on("keyup", ({ keyCode }) => {
+      if (keyCode === 13) onSearch();
+    });
+
+    function onSearch() {
+      const keyword = input.val();
+      if (keyword.length !== 0) {
+        booksDiv.toggle("slide", { direction: "down" });
+        const btn = $("#searchBtn");
+        btn.attr("disabled", "disabled");
+        input.val("");
+        axios
+          .post(SEARCH_API, { topic: keyword })
+          .then((response) => {
+            let content = "";
+            response.data.Items.forEach(
+              (book) =>
+                (content += `<div class="bookDiv">
+                                                              <div><img alt="book" src="${book.image}" /></div>
+                                                              <div>${book.name}</div>
+                                                            </div>`)
+            );
+            booksDiv.html(content);
+            btn.removeAttr("disabled");
+            booksDiv.toggle("slide", { direction: "down" });
+          })
+          .catch((err) => console.log(err));
+      }
+    }
+  </script>
+</html>
