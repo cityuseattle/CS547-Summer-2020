@@ -32,12 +32,12 @@ functions:
           path: todos
           method: get
           cors: true
-  update:
-    handler: functions/update.update
+  delete:
+    handler: functions/delete.delete
     events:
       - http:
           path: todos/{id}
-          method: put
+          method: delete
           cors: true
 
 resources:
