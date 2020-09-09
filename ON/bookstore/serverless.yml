@@ -1,4 +1,4 @@
-service: aws-nodejs # NOTE: update this with your service nam
+service: aws-nodejs # NOTE: update this with your service name
 
 plugins:
   - serverless-pseudo-parameters
@@ -7,6 +7,10 @@ provider:
   name: aws
   runtime: nodejs12.x
   region: us-west-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action: dynamodb:scan
+      Resource: arn:aws:dynamodb:#{AWS::Region}:#{AWS::AccountId}:table/books
 
 functions:
   get-index:
@@ -15,3 +19,28 @@ functions:
       - http:
           path: /
           method: get
+
+  fetch-books:
+    handler: functions/fetch-books.handler
+    events:
+      - http:
+          path: /books/
+          method: get
+    environment:
+      books_table: books
+
+resources:
+  Resources:
+    libraryTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: books
+        AttributeDefinitions:
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: name
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
