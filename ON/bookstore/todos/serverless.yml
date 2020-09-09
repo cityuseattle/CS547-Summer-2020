@@ -34,6 +34,14 @@ read:
         method: get
         cors: true
 
+delete:
+  handler: functions/delete.delete
+  events:
+    - http:
+        path: totos/{id}
+        method: delete
+        cors: true
+
 resources:
   Resources:
     TodosDynamoDbTable:
