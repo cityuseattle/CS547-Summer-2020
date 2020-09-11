@@ -1,0 +1,7 @@
+# exclude node_module to be push to GitHub
+node_modules/
+
+# exclude package-lock.json
+packalge-lock.json
+
+.vscode
