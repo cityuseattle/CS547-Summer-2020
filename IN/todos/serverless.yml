@@ -39,7 +39,13 @@ functions:
         path: todo/{id}
         method: put
         cors: true
-
+delete:
+    handler: functions/delete.delete
+    events:
+      -http:
+        path: todo/{id}
+        method: delete
+        cors: true
 resources:
   Resources:
     TodosDynamoDbTable:
