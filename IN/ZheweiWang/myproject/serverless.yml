@@ -32,6 +32,14 @@ functions:
           path: todos/{id}
           method: put
           cors: true
+          update:
+  delete:  
+    handler: functions/delete.delete
+    events:
+      - http:
+          path: todos/{id}
+          method: delete
+          cors: true
   read:
     handler: functions/read.read
     events:
